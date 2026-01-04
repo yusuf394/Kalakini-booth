@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KalaKini Booth - Photobooth Gratis dengan Filter Lucu">
+    <title>KalaKini Booth - Photobooth Gratis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">✨ KalaKini Booth ✨</h1>
+            <p class="tagline">Abadikan momen hangatmu dengan filter lucu!</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Camera Section -->
+            <div class="camera-section" id="cameraSection">
+                <div class="camera-container">
+                    <video id="videoElement" autoplay playsinline></video>
+                    <canvas id="previewCanvas" style="display: none;"></canvas>
+                    <div class="filter-overlay" id="filterOverlay"></div>
+                    <div class="countdown" id="countdown" style="display: none;"></div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-primary" id="startCameraBtn">🎥 Mulai Kamera</button>
+                    <button class="btn btn-secondary" id="captureBtn" disabled>📸 Ambil Foto</button>
+                    <button class="btn btn-secondary" id="switchCameraBtn" disabled>🔄 Ganti Kamera</button>
+                </div>
+
+                <div class="photo-counter">
+                    <p>Foto diambil: <span id="photoCount">0</span> / 3</p>
+                </div>
+            </div>
+
+            <!-- Filter Selection -->
+            <div class="filter-section" id="filterSection" style="display: none;">
+                <h2>Pilih Filter</h2>
+                <div class="filter-grid">
+                    <button class="filter-btn" data-filter="none">Tidak Ada</button>
+                    <button class="filter-btn" data-filter="hearts">💕 Hearts</button>
+                    <button class="filter-btn" data-filter="stars">⭐ Stars</button>
+                    <button class="filter-btn" data-filter="sparkles">✨ Sparkles</button>
+                    <button class="filter-btn" data-filter="emoji">😊 Emoji</button>
+                    <button class="filter-btn" data-filter="vintage">📷 Vintage</button>
+                    <button class="filter-btn" data-filter="bright">☀️ Cerah</button>
+                    <button class="filter-btn" data-filter="smooth">🌟 Smooth</button>
+                </div>
+                <button class="btn btn-primary" id="applyFilterBtn">Terapkan Filter</button>
+            </div>
+
+            <!-- Photo Strip Preview -->
+            <div class="strip-section" id="stripSection" style="display: none;">
+                <h2>Hasil Foto Strip Kamu</h2>
+                <div class="strip-container">
+                    <canvas id="stripCanvas"></canvas>
+                </div>
+                <button class="btn btn-success" id="downloadBtn">💾 Download Foto Strip</button>
+                <button class="btn btn-secondary" id="newPhotoBtn">🔄 Foto Baru</button>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+        </main>
+
+        <footer class="footer">
+            <p>Dibuat dengan ❤️ untuk momen hangatmu</p>
+        </footer>
+    </div>
+
+    <script src="js/camera.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/photostrip.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
